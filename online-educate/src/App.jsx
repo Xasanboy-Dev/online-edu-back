@@ -12,12 +12,12 @@ import Salary from './pages/Salary'
 
 const App = () => {
   return (
-    <div className='h-screen w-full'>
-      <Chat/>
+    <div className="h-screen w-full">
       <Routes>
-        <Route path='/oylik' element={<Salary/>}/>
-        <Route path='/buyAdmin' element={<BuyAdmin/>}/>
-              </Routes>
+        <Route path="/salary" element={<Salary />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/buyAdmin" element={<BuyAdmin />} />
+      </Routes>
     </div>
   )
 }

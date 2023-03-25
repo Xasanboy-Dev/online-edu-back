@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Worker } from '../mock/CardsData'
 import { AiOutlineFieldNumber } from 'react-icons/ai'
+import Navbar from '../components/navbar/Navbar'
 
 const Salary = () => {
     const [show, setShow] = useState(false)
@@ -11,7 +12,7 @@ const Salary = () => {
     }
     return (
         <div className='w-full h-full bg-gradient bg-cover bg-center text-gray-400 text-3xl'>
-
+            <Navbar/>
             <nav className='w-full p-6 text-gray-600 flex justify-center'>
                 <form className=''>
                     <select onClick={() => setShow(false)} onChange={(e) => setValue(e.target.value)} value={value} className='mr-4 w-54 transiton-250 outline-none rounded bg-transparent border-2 border-white/30 '>
