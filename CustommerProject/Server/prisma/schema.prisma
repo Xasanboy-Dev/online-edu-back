@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id               Int      @id @default(autoincrement())
+  name             String
+  lastname         String
+  phoneNumber      String   @unique
+  role             TypeUser @default(user)
+  lastMessage      String?
+  lastMessageID    Int?
+  messages         Int[]
+  connectedCourses Int[]
+  connectedChats   Int[]
+  password         String
+  comments         Int[]
+  createdDate      DateTime @default(now())
+}
+
+model message {
+  id           Int      @id @default(autoincrement())
+  text         String
+  ownerName    String
+  ownerId      Int
+  reciever     Int?
+  recieverName String?
+  createdDate  DateTime @default(now())
+  chatId       Int?
+}
+
+model chat {
+  id          Int      @id @default(autoincrement())
+  type        Type     @default(chat)
+  users       Int[]
+  messages    String[]
+  createdDate DateTime @default(now())
+}
+
+enum Type {
+  chat
+  group
+}
+
+model course {
+  id          Int       @id @default(autoincrement())
+  name        String
+  type        Courses   @default(undefined)
+  teacherName String
+  teacherId   Int
+  pupils      Int[]
+  createdDate DateTime  @default(now())
+  deadTime    DateTime? @default(now())
+}
+
+enum Courses {
+  Backend
+  Frontend
+  SMM
+  Android
+  undefined
+}
+
+enum TypeUser {
+  user
+  admin
+  pupil
+  teacher
+}
+
+model teacher {
+  id               Int      @id @default(autoincrement())
+  name             String
+  lastname         String
+  phoneNumber      String   @unique
+  role             TypeUser @default(teacher)
+  lastMessage      String?
+  lastMessageID    Int?
+  messages         Int[]
+  connectedCourses Int[]
+  connectedChats   Int[]
+  password         String
+  comments         Int[]
+  createdDate      DateTime @default(now())
+}
+
+model comment {
+  id          Int      @id @default(autoincrement())
+  ownerName   String
+  ownerId     Int
+  text        String
+  createdDate DateTime @default(now())
+  likes       Int[]
+}
+
+model Videos {
+  id          Int      @id @default(autoincrement())
+  ownerName   String
+  ownerId     Int
+  comments    Int[]
+  createdDate DateTime @default(now())
+  for         PostType @default(course)
+}
+
+model Image {
+  id          Int      @id @default(autoincrement())
+  ownerName   String
+  ownerId     Int
+  comments    Int[]
+  createdDate DateTime @default(now())
+  for         PostType @default(course)
+}
+
+enum PostType {
+  public
+  course
+  chat
+}
