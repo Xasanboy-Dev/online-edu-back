@@ -21,6 +21,7 @@ model user {
   password         String
   comments         Int[]
   createdDate      DateTime @default(now())
+  imageURL         String   @default("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmADCanENXbPEIU8BSSP8tofT9ydhrTCBaw&usqp=CAU")
 }
 
 model message {
@@ -32,14 +33,21 @@ model message {
   recieverName String?
   createdDate  DateTime @default(now())
   chatId       Int?
+  type         Reciever @default(sender)
+}
+
+enum Reciever {
+  reciever
+  sender
 }
 
 model chat {
-  id          Int      @id @default(autoincrement())
-  type        Type     @default(chat)
-  users       Int[]
-  messages    String[]
-  createdDate DateTime @default(now())
+  id           Int      @id @default(autoincrement())
+  type         Type     @default(chat)
+  users        Int[]
+  messages     Int[]
+  chatImageURL String   @default("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3eJ7YGB7XjPIjGfkdX0hi7YKoUhZopebBg&usqp=CAU")
+  createdDate  DateTime @default(now())
 }
 
 enum Type {

@@ -1,0 +1,38 @@
+@url=http://localhost:8080/message
+
+
+GET  {{url}}/all
+Content-Type: application/json
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ilhhc2FuYm95IiwibGFzdG5hbWUiOiJBZGJ1cmFzdWxvdiIsInBob25lTnVtYmVyIjoiOTk4OTkxNzg4NDczIiwicm9sZSI6InVzZXIiLCJsYXN0TWVzc2FnZSI6bnVsbCwibGFzdE1lc3NhZ2VJRCI6bnVsbCwibWVzc2FnZXMiOltdLCJjb25uZWN0ZWRDb3Vyc2VzIjpbXSwiY29ubmVjdGVkQ2hhdHMiOltdLCJpYXQiOjE2Nzk4MTE5NjJ9.GwcbwNwZ3K6Cf7y0odDfCom2ApO1wdTxRYQYaN_1Sb4
+
+###
+GET  {{url}}/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ilhhc2FuYm95IiwibGFzdG5hbWUiOiJBZGJ1cmFzdWxvdiIsInBob25lTnVtYmVyIjoiOTk4OTkxNzg4NDczIiwicm9sZSI6InVzZXIiLCJsYXN0TWVzc2FnZSI6bnVsbCwibGFzdE1lc3NhZ2VJRCI6bnVsbCwibWVzc2FnZXMiOltdLCJjb25uZWN0ZWRDb3Vyc2VzIjpbXSwiY29ubmVjdGVkQ2hhdHMiOltdLCJpYXQiOjE2Nzk4MTE5NjJ9.GwcbwNwZ3K6Cf7y0odDfCom2ApO1wdTxRYQYaN_1Sb4
+
+###
+POST {{url}}
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ilhhc2FuYm95IiwibGFzdG5hbWUiOiJBZGJ1cmFzdWxvdiIsInBob25lTnVtYmVyIjoiOTk4OTkxNzg4NDczIiwicm9sZSI6InVzZXIiLCJsYXN0TWVzc2FnZSI6bnVsbCwibGFzdE1lc3NhZ2VJRCI6bnVsbCwibWVzc2FnZXMiOltdLCJjb25uZWN0ZWRDb3Vyc2VzIjpbXSwiY29ubmVjdGVkQ2hhdHMiOltdLCJpYXQiOjE2Nzk4MTE5NjJ9.GwcbwNwZ3K6Cf7y0odDfCom2ApO1wdTxRYQYaN_1Sb4
+
+{
+    "text":"Hello Bro ?",
+    "ownerId":1,
+    "recieverId":2
+}
+
+###
+PUT {{url}}
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ilhhc2FuYm95IiwibGFzdG5hbWUiOiJBZGJ1cmFzdWxvdiIsInBob25lTnVtYmVyIjoiOTk4OTkxNzg4NDczIiwicm9sZSI6InVzZXIiLCJsYXN0TWVzc2FnZSI6bnVsbCwibGFzdE1lc3NhZ2VJRCI6bnVsbCwibWVzc2FnZXMiOltdLCJjb25uZWN0ZWRDb3Vyc2VzIjpbXSwiY29ubmVjdGVkQ2hhdHMiOltdLCJpYXQiOjE2Nzk4MTE5NjJ9.GwcbwNwZ3K6Cf7y0odDfCom2ApO1wdTxRYQYaN_1Sb4
+
+
+{
+    "messageID":4,
+    "letter":"ANother one",
+    "ownerID":1,
+    "recieverId":2
+}
+
+###
+DELETE  {{url}}/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ilhhc2FuYm95IiwibGFzdG5hbWUiOiJBZGJ1cmFzdWxvdiIsInBob25lTnVtYmVyIjoiOTk4OTkxNzg4NDczIiwicm9sZSI6InVzZXIiLCJsYXN0TWVzc2FnZSI6bnVsbCwibGFzdE1lc3NhZ2VJRCI6bnVsbCwibWVzc2FnZXMiOltdLCJjb25uZWN0ZWRDb3Vyc2VzIjpbXSwiY29ubmVjdGVkQ2hhdHMiOltdLCJpYXQiOjE2Nzk4MTE5NjJ9.GwcbwNwZ3K6Cf7y0odDfCom2ApO1wdTxRYQYaN_1Sb4

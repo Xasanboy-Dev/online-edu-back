@@ -39,7 +39,7 @@ export async function createmessage(
   return await prisma.message.create({ data: { ownerId, ownerName, reciever, recieverName, text } })
 }
 
-export async function editMessage(id: number, text: string, ownerName: string, ownerId: number, reciever: number, recieverName: string) {
+export async function updateMessage(id: number, text: string, ownerName: string, ownerId: number, reciever: number, recieverName: string) {
   return await prisma.message.update({ data: { text, recieverName, reciever, ownerId, ownerName }, where: { id } })
 }
 

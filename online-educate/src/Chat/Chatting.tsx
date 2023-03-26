@@ -1,16 +1,23 @@
-import React from "react";
-import Input from "./Input";
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 export default function Chat() {
+    const navigate = useNavigate()
+    const token = localStorage.getItem('allowed?')
+    if (!token) {
+        navigate('/login')
+        return
+    }
   return (
-    <div className="chat">
-      <div className="chatInfo">
-        <span>Xasanboy</span>
-        <div className="chatIcons">
-          <i className="bi bi-person-fill-add"></i>
-          <i className="bi bi-camera-video-fill"></i>
-          <i className="bi bi-three-dots"></i>
+        <div className='chat'>
+            <div className='w-full text-'>
+                <h1 className='border   border-white '>Hello World</h1>
+            </div>
+            <div>Hello World</div>
+            <div>Hello World</div>
+            <div>Hello World</div>
+            <div>Hello World</div>
+            <div>Hello World</div>
+            <div>Hello World</div>
         </div>
-      </div>
-    </div>
-  );
+    )
 }

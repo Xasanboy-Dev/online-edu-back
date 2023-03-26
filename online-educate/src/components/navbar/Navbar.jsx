@@ -24,7 +24,6 @@ const Navbar = () => {
     const path = pathname.split("/")[1];
     setArr(navItems.filter((i) => i.name !== path));
   }, []);
-  console.log(arr, navItems);
   return (
     <nav className="fixed w-full bottom-0 h-16 bg-transparent border-t-2 border-black flex justify-center items-center text-white/80">
       <ul className="flex justify-center items-center gap-6">
