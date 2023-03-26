@@ -52,7 +52,12 @@ export async function createUser(req: Request, res: Response) {
     if (name && lastname && phoneNumber && password) {
       const user = await getUserByPhoneNumber(phoneNumber);
       if (!user) {
-        const createdUser = addUser(name, lastname, phoneNumber, password);
+        const createdUser = await addUser(
+          name,
+          lastname,
+          phoneNumber,
+          password
+        );
         return res.status(201).json({
           message: "User has created succesfully!",
           user: createdUser,
@@ -122,7 +127,7 @@ export async function LoginUer(req: Request, res: Response) {
       const user = await getUserByPhoneNumber(phoneNumber);
       if (user) {
         if (await ComparePassword(password, user.password)) {
-          let token = SignToken(
+          let token =  SignToken(
             user.id,
             user.name,
             user.lastname,
@@ -133,7 +138,7 @@ export async function LoginUer(req: Request, res: Response) {
             user.messages,
             user.connectedCourses,
             user.connectedChats
-          )
+          );
           return res.status(200).json({ message: "All right", user: token });
         } else {
           return res.status(400).json({ message: "You have some probelems!" });
@@ -165,48 +170,54 @@ export async function checkTokenValid(req: Request, res: Response) {
   }
 }
 
-
 export async function getCommentByUserId(req: Request, res: Response) {
   try {
-    const token = req.headers.authorization
-    const { userID } = req.body
+    const token = req.headers.authorization;
+    const { userID } = req.body;
     if (token) {
-      const ValidateToken = VerifyToken(token)
-      const user = await getOneUserById(+userID)
+      const ValidateToken = VerifyToken(token);
+      const user = await getOneUserById(+userID);
       if (user) {
-        const comments = await findCommentById(user.id)
-        return res.status(200).json({ message: "All comments", comments })
+        const comments = await findCommentById(user.id);
+        return res.status(200).json({ message: "All comments", comments });
       } else {
-        return res.status(404).json({ message: "Your user is not exist!" })
+        return res.status(404).json({ message: "Your user is not exist!" });
       }
     } else {
-      return res.status(401).json({ message: "You must to login!" })
+      return res.status(401).json({ message: "You must to login!" });
     }
   } catch (error: any) {
-    console.log(error.message)
-    res.status(500).json({ message: "Internal error" })
+    console.log(error.message);
+    res.status(500).json({ message: "Internal error" });
   }
 }
 
 export async function editCommentByUserId(req: Request, res: Response) {
   try {
-    const token = req.headers.authorization
-    const { userId, commentId, text } = req.body
+    const token = req.headers.authorization;
+    const { userId, commentId, text } = req.body;
     if (token && userId && commentId && text) {
-      const user = await getOneUserById(+userId)
-      const comment = await findCommentById(+commentId)
-      const ValidateToken = VerifyToken(token)
+      const user = await getOneUserById(+userId);
+      const comment = await findCommentById(+commentId);
+      const ValidateToken = VerifyToken(token);
       if (user && comment) {
-        const editedComment = await editComment(comment.id, text, comment.likes)
-        return res.status(200).json({ message: "Comment edited succesfully", comment: editedComment })
+        const editedComment = await editComment(
+          comment.id,
+          text,
+          comment.likes
+        );
+        return res.status(200).json({
+          message: "Comment edited succesfully",
+          comment: editedComment,
+        });
       } else {
-        return res.status(404).json({ message: "You have some problems!" })
+        return res.status(404).json({ message: "You have some problems!" });
       }
     } else {
-      return res.status(401).json({ messahe: "Yoiu must to login!" })
+      return res.status(401).json({ messahe: "Yoiu must to login!" });
     }
   } catch (error: any) {
-    console.log(error.message)
-    res.status(500).json({ message: "You must to login!" })
+    console.log(error.message);
+    res.status(500).json({ message: "You must to login!" });
   }
 }

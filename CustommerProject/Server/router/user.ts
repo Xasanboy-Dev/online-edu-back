@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { getAllCHattingUsers } from "../controller/Chat";
 import {
   checkTokenValid,
   createUser,
@@ -10,17 +11,18 @@ import {
   updateUser,
 } from "../controller/user";
 const router = Router();
-import search from "./Search/search"
+import search from "./Search/search";
 
 router.get("/all", getUsers);
 router.get("/token", checkTokenValid);
-router.get("/comments", getCommentByUserId)
+router.get("/comments", getCommentByUserId);
 router.get("/:id", getUserById);
-router.post("/", createUser);
+router.post("/register", createUser);
 router.put("/:id", updateUser);
-router.put("/comment", editCommentByUserId)
+router.put("/comment", editCommentByUserId);
 router.post("/login", LoginUer);
+router.post("/chattingUsers", getAllCHattingUsers);
 
-router.use("/search", search)
+router.use("/search", search);
 
 export default router;
