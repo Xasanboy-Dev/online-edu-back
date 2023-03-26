@@ -12,6 +12,7 @@ import Login from './pages/Login'
 import Salary from './pages/Salary'
 import HomePage from './pages/Home'
 import Error from './Error/error'
+import AddChat from './Chat/adddChat'
 import { getUserByToken } from './TypeScript/Auth'
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
                 <Routes>
                     <Route path=':id' element={<Error />} />
                     <Route path='/' element={<HomePage />} />
+                    <Route path='/addChat' element={<AddChat />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<RegistartionStudent />} />
                     <Route path='/oylik' element={<Salary />} />

@@ -10,20 +10,21 @@ const ChatUser = (chattingUserId: number) => {
     const navigate = useNavigate()
     const token = localStorage.getItem('allowed?')
     let [userChats, setCHats] = useState<any[]>()
+    const user = useContext(currentUser)
     if (token) {
-        const user = useContext(currentUser)
         let chats = user?.connectedChats
         useEffect(() => {
             const result = getChatByID(chats, token)
             result.then((res) => {
                 setCHats(res)
+                console.log(res)
             })
         }, [chats])
     } else {
         navigate('/login')
         return
     }
-    if (userChats)
+    if (userChats && user?.connectedChats.length !== 0) {
         return (
             <div className='w-full  justify-between  items-center text-white   pb-2'>
                 {userChats.map((chat) => {
@@ -32,7 +33,7 @@ const ChatUser = (chattingUserId: number) => {
                             <div className='w-full justify-between border-b-[3px] flex items-center text-white/80'>
                                 <div className='flex items-center '>
                                     <img
-                                        src={`${chat.imageURL}`}
+                                        src={`${chat.imageURL ? chat.imageURL : chat.chatImageURL}`}
                                         alt='Your image'
                                         className='rounded-full h-12 m-2'
                                     />
@@ -41,7 +42,7 @@ const ChatUser = (chattingUserId: number) => {
                                             {chat.name}
                                         </h1>
                                         <p className='text-xs text-white/40'>
-                                            {chat.lastMessage}
+                                            {chat.Desc}
                                         </p>
                                     </div>
                                 </div>
@@ -54,6 +55,13 @@ const ChatUser = (chattingUserId: number) => {
                 })}
             </div>
         )
+    } else {
+        return (
+            <div className='flex text-center'>
+                <span className='text-white text-2xl mx-auto '>Siz hali hech kinga yozmagansiz!</span>
+            </div>
+        )
+    }
 }
 
 export default ChatUser

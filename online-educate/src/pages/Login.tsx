@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { LoginAuth } from '../TypeScript/Auth'
 const LoginUser = () => {
-    const [phoneNumber, setPhoneNumber] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('+998')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(false)
     const [message, setMessage] = useState('')
@@ -58,6 +58,7 @@ const LoginUser = () => {
                         <input
                             className='w-full rounded max-sm:h-8 h-12 p-2 bg-transparent border border-white outline-none'
                             type='number'
+                            value={phoneNumber}
                             placeholder='+998 XX XXX XX XX'
                             onChange={(e) => setPhoneNumber(e.target.value)}
                         />
