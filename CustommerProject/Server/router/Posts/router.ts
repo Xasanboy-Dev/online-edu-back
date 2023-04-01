@@ -45,6 +45,7 @@ router.post(
 router.delete("/", deletePost)
 router.put("/", updatePost)
 router.get('/all', getPosts)
+router.get('/all/true')
 router.get("/:id", getOnePostsById)
 
 export default router

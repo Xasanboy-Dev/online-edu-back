@@ -17,7 +17,8 @@ import Videos from "./pages/Videos";
 import ProfileWorker from "./pages/ProfileWorker";
 import MainPage from "./pages/MainPage";
 import AddStudent from "./pages/DataGrid";
-import Post from "./Post/post";
+import Post from "./Post/Post";
+import Comment from "./Post/Comment";
 
 const App = () => {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ const App = () => {
           <Route path="/buyAdmin" element={<BuyAdmin />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/post" element={<Post />} />
+          <Route path="/comment" element={<Comment />} />
         </Routes>
       </currentUser.Provider>
     </div>

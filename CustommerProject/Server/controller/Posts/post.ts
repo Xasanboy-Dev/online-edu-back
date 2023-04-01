@@ -139,3 +139,17 @@ export async function deletePost(req: Request, res: Response) {
         res.status(500).json({ message: "Internal error" })
     }
 }
+
+export async function getAllPostsTrue(req: Request, res: Response) {
+    try {
+        const token = req.headers.authorization
+        if(token){
+         
+        }else{
+            return res.status(401).json({message:"You must to login!"})
+        }
+    } catch (error: any) {
+        console.log(error.message)
+        res.status(500).json({ message: "Internal error" })
+    }
+}

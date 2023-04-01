@@ -51,3 +51,7 @@ export async function removePost(userId: number, postId: number) {
         return await prisma.posts.delete({ where: { id: postId } })
     }
 }
+
+export async function findAllTruePosts(){
+    return await prisma.posts.findMany({where:{}})
+}
