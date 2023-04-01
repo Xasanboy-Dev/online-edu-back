@@ -9,6 +9,7 @@ import {
 } from '../database/message'
 import { editUser, getOneUserById } from '../database/user'
 import { message } from '@prisma/client'
+import { getUserById } from './user'
 
 export async function findAllMessages(req: Request, res: Response) {
     try {
@@ -88,24 +89,22 @@ export async function addMessage(req: Request, res: Response) {
                         owner.name,
                         owner.lastname,
                         owner.phoneNumber,
-                        createdMessage.text,
-                        createdMessage.id,
                         messages,
                         owner.connectedChats,
                         owner.password,
-                        owner.comments
+                        owner.comments,
+                        owner.posts
                     )
                     const UpdateRecieverUser = await editUser(
                         reciever.id,
                         reciever.name,
                         reciever.lastname,
                         reciever.phoneNumber,
-                        createdMessage.text,
-                        createdMessage.id,
                         reMessages,
                         reciever.connectedChats,
                         reciever.password,
-                        reciever.comments
+                        reciever.comments,
+                        owner.posts
                     )
                     if (updatedUser && UpdateRecieverUser) {
                         return res.status(201).json({
@@ -204,24 +203,22 @@ export async function deleteMessage(req: Request, res: Response) {
                         owner.name,
                         owner.lastname,
                         owner.phoneNumber,
-                        owner.lastMessage!,
-                        owner.lastMessageID!,
                         messages,
                         owner.connectedChats,
                         owner.password,
-                        owner.comments
+                        owner.comments,
+                        owner.posts
                     )
                     const recieverUser = await editUser(
                         reiever.id,
                         reiever.name,
                         reiever.lastname,
                         reiever.phoneNumber,
-                        reiever.lastMessage!,
-                        reiever.lastMessageID!,
                         reMessages,
                         reiever.connectedChats,
                         reiever.password,
-                        reiever.comments
+                        reiever.comments,
+                        owner.posts
                     )
                     const deletedMessage = await removeMessageWithId(+messageID)
                     if (deletedMessage && recieverUser && updatedUser) {

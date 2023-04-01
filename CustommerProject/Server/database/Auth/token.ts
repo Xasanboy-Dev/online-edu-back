@@ -9,8 +9,6 @@ export function SignToken(
   lastname: string,
   phoneNumber: string,
   role: TypeUser,
-  lastMessage: string,
-  lastMessageID: number,
   messages: number[],
   connectedCourses: number[],
   connectedChats: number[]
@@ -21,8 +19,6 @@ export function SignToken(
     lastname,
     phoneNumber,
     role,
-    lastMessage,
-    lastMessageID,
     messages,
     connectedCourses,
     connectedChats,

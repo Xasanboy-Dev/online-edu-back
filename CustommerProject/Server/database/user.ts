@@ -36,12 +36,11 @@ export async function editUser(
   name: string,
   lastname: string,
   phoneNumber: string,
-  lastMessage: string,
-  lastMessageID: number,
   messages: number[],
   connectedChats: number[],
   password: string,
   comments: number[],
+  posts: number[]
 ) {
   let hash = await HashPassword(password)
   const user = await prisma.user.findUnique({ where: { id } });
@@ -50,14 +49,13 @@ export async function editUser(
       where: { id },
       data: {
         connectedChats,
-        lastMessage,
-        lastMessageID,
         lastname,
         messages,
         name,
         phoneNumber,
         password: hash,
-        comments
+        comments,
+        posts
       },
     });
   }

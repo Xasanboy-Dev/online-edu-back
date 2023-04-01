@@ -103,12 +103,11 @@ export async function updateUser(req: Request, res: Response) {
                     name ? name : user.name,
                     lastname ? lastMessage : user.lastname,
                     phoneNumber ? phoneNumber : user.phoneNumber,
-                    lastMessage ? lastMessage : user.lastMessage,
-                    lastMessageID ? lastMessageID : user.lastMessageID,
                     messages ? messages : user.messages,
                     connectedChats ? connectedChats : user.connectedChats,
                     password ? password : user.password,
-                    user.comments
+                    user.comments,
+                    user.posts
                 )
                 return res.status(200).json({
                     message: 'Updated succesfully!',
@@ -142,11 +141,9 @@ export async function LoginUer(req: Request, res: Response) {
                         user.lastname,
                         user.phoneNumber,
                         user.role,
-                        user.lastMessage!,
-                        user.lastMessageID!,
                         user.messages,
                         user.connectedCourses,
-                        user.connectedChats
+                        user.connectedChats,
                     )
                     return res
                         .status(200)

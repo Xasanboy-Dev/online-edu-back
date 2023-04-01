@@ -1,6 +1,7 @@
 import { Router } from "express"
 import { Request } from "express";
 import multer from "multer"
+import { createNewPost, deletePost, getOnePostsById, getPosts, updatePost } from "../../controller/Posts/post";
 
 const image = multer.diskStorage({
   destination: (req: Request, file: any, cb: any) => {
@@ -29,8 +30,21 @@ const uploadVideo = multer({ storage: vidoe })
 const router = Router()
 
 
-router.post("/image", uploadImage.single("avatar"),)
-router.post("/video", uploadImage.single("post"),)
 
+router.post(
+  "/image",
+  uploadImage.single("avatar"),
+  createNewPost
+)
+
+router.post(
+  "/video",
+  uploadImage.single("post"),
+  createNewPost
+)
+router.delete("/", deletePost)
+router.put("/", updatePost)
+router.get('/all', getPosts)
+router.get("/:id", getOnePostsById)
 
 export default router

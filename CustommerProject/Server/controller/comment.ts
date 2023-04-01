@@ -96,12 +96,11 @@ export async function removeComment(req: Request, res: Response) {
                     user.name,
                     user.lastname,
                     user.phoneNumber,
-                    user.lastMessage!,
-                    user.lastMessageID!,
                     user.messages,
                     user.connectedChats,
                     user.password,
-                    editedCommenst
+                    editedCommenst,
+                    user.posts
                 ))?.comments
                 const deletedComment = await deleteComment(comment.id, userComments!, user.id)
                 return res.status(200).json({ message: "Comment deleted succesfully", comment: deletedComment })

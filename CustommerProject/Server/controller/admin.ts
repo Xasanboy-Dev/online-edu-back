@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getAllAdmins } from "../database/admin";
-import { VerifyToken } from "./../database/token"
+import { VerifyToken } from "./../database/Auth/token"
 
 export async function getAdminById(req: Request, res: Response) {
     try {

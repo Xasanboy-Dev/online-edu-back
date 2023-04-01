@@ -13,8 +13,6 @@ model user {
   lastname         String
   phoneNumber      String   @unique
   role             TypeUser @default(user)
-  lastMessage      String?
-  lastMessageID    Int?
   messages         Int[]
   connectedCourses Int[]
   connectedChats   Int[]
@@ -22,6 +20,7 @@ model user {
   comments         Int[]
   createdDate      DateTime @default(now())
   imageURL         String   @default("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmADCanENXbPEIU8BSSP8tofT9ydhrTCBaw&usqp=CAU")
+  posts            Int[]
 }
 
 model message {
@@ -43,7 +42,7 @@ enum Reciever {
 
 model chat {
   id           Int      @id @default(autoincrement())
-  name         String   
+  name         String
   type         Type     @default(chat)
   users        Int[]
   messages     Int[]
@@ -107,26 +106,19 @@ model comment {
   likes       Int[]
 }
 
-model Videos {
+model Posts {
   id          Int      @id @default(autoincrement())
+  title       String
+  owner       Int
   ownerName   String
-  ownerId     Int
-  comments    Int[]
   createdDate DateTime @default(now())
-  for         PostType @default(course)
+  published   Boolean  @default(false)
+  typeOf      Post     @default(pupil)
+  commentId   Int[]
 }
 
-model Image {
-  id          Int      @id @default(autoincrement())
-  ownerName   String
-  ownerId     Int
-  comments    Int[]
-  createdDate DateTime @default(now())
-  for         PostType @default(course)
-}
-
-enum PostType {
-  public
-  course
-  chat
+enum Post {
+  pupil
+  techer
+  admin
 }
