@@ -17,6 +17,7 @@ import Videos from "./pages/Videos";
 import ProfileWorker from "./pages/ProfileWorker";
 import MainPage from "./pages/MainPage";
 import AddStudent from "./pages/DataGrid";
+import Post from "./Post/post";
 
 const App = () => {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ const App = () => {
     <div className="">
       <currentUser.Provider value={user}>
         <Routes>
-          {/* <Route path="/" element={<Home/>} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegistartionStudent />} />
           <Route path="/oylik" element={<Salary />} />
@@ -50,9 +51,10 @@ const App = () => {
           <Route path="/salary" element={<Salary />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/buyAdmin" element={<BuyAdmin />} />
+          <Route path="/videos" element={<Videos />} />
+          <Route path="/post" element={<Post />} />
         </Routes>
       </currentUser.Provider>
-     <Videos/>
     </div>
   );
 };

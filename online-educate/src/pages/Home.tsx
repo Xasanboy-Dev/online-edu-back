@@ -1,7 +1,10 @@
 import React from "react";
 import { useContext } from "react";
+import Post from "../Post/post";
 export default function HomePage() {
   return (
-  <div>Hello World</div>
+    <div>
+      <Post   />
+    </div>
   )
 }
