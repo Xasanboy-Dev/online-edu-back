@@ -7,6 +7,9 @@
     background: linear-gradient(120deg, rgba(56,74,78,1) 0%, rgba(14,17,41,1) 23%, rgba(3,2,31,1) 46%, rgba(28,27,54,1) 73%, rgba(60,59,83,1) 96%);
 
 }
+.gradient{
+    background: -webkit-linear-gradient(90deg, #040d2c,#462a8b,#8d05d6);background: linear-gradient(90deg, #040d2c,#462a8b,#8d05d6);
+  }
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }

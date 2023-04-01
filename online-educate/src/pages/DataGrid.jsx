@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import './datagrid.css'
+import '../styles/datagrid.css'
 
 export default function AddStudent() {
     const data = [

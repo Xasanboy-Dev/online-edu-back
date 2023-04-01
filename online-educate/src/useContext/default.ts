@@ -45,5 +45,5 @@ export let chattingUser = createContext<{
   lastMessageID: "",
   messages: [],
   connectedCourses: [],
-  connectedChats: [1,2,3],
+  connectedChats: [],
 });

@@ -1,0 +1,382 @@
+.mainHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(212, 234, 253);
+    border-radius: 200px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.lists {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: -10px;
+}
+
+.lists li {
+    transform: translateY(-20px);
+}
+
+.lists img {
+    width: 200px;
+    margin-right: -30px;
+}
+
+.listsItems {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.listsItems:hover {
+    transform: translateY(-30px);
+    transition: all 0.5s ease;
+    color: rgb(61, 9, 182);
+}
+
+.listsItems:active {
+    transform: translateY(-20px);
+
+}
+
+.p {
+    font-size: 26px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.searchBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    gap: 15px;
+}
+
+.searchInput {
+    outline: none;
+    border: none;
+    width: 100%;
+    background: transparent;
+    color: black;
+}
+
+.userInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.user img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.userNamee {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.surname {
+    color: gray;
+}
+
+.mainInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(212, 234, 253);
+    border-radius: 100px;
+    margin: 20px;
+    padding: 20px 60px;
+    overflow-y: scroll;
+    height: 700px;
+    width: 98%;
+    gap: 100px;
+}
+
+.tushumInputs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tushum {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tushum p {
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+.tushum h1 {
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgb(76, 76, 177);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+}
+
+.slikas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.slikas span {
+    font-size: 19px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.silkaInputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 45px;
+    background-color: rgb(76, 76, 177);
+    padding: 30px 20px;
+    width: 600px;
+    height: 500px;
+    border-radius: 6px;
+}
+
+.inputSilka input {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: aliceblue;
+    width: 260px;
+}
+
+.inputSilka input::placeholder {
+    color: rgb(94, 91, 91);
+}
+
+.as input {
+    width: 300px;
+}
+
+.inputSilka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.addInfo {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: aliceblue;
+    height: 500px;
+    width: 400px;
+    border-radius: 6px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.aa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(76, 76, 177);
+    color: white;
+    border-radius: 50%;
+    padding: 5px 18px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.aa:active {
+    scale: 90%;
+    transition: all 0.2s ease;
+}
+
+.addInfo h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px auto;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    padding-bottom: 0px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 10px;
+}
+
+.addInfoInput {
+    border: 1px solid rgb(76, 76, 177);
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+
+    background-color: aliceblue;
+    color: rgb(0, 0, 0);
+}
+
+.addInfoInput::placeholder {
+    color: rgb(94, 91, 91);
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(76, 76, 177);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 15px;
+    font-size: 27px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.addInputRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.open {
+    transform: translateX(0px);
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.close {
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.5s ease;
+    display: none;
+}
+
+.dd {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: aliceblue;
+    padding: 10px 30px;
+    border-radius: 6px;
+    width: 400px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top: 2px double rgb(25, 87, 169);
+}
+
+.UsersInfo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+    background-color: aliceblue;
+    height: 500px;
+    width: 400px;
+    border-radius: 20px;
+    padding: 20px 40px;
+}
+
+.kurslar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.UsersInfo p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.UsersInfo p input {
+    border-left: 1px solid gray;
+    padding: 0 10px;
+    font-size: 14px;
+
+    color: rgba(73, 72, 72, 0.826);
+    outline: none;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.UsersInfo .a {
+    border: 1px solid rgb(57, 180, 211);
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    scale: 90%;
+}
+
+.tushish {
+    transform: translate(280px, 20px);
+    background-color: rgb(29, 139, 236);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    scale: 80%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.tushish:active {
+    scale: 70%;
+    transition: all 0.5s ease;
+    transform: translate(340px, 20px);
+
+}
