@@ -19,6 +19,8 @@ import MainPage from "./pages/MainPage";
 import AddStudent from "./pages/DataGrid";
 import Post from "./Post/Post";
 import Comment from "./Post/Comment";
+import UploadPage from "./Post/UploadPage"
+import SearchingSystem from "./components/navbar/Search";
 
 const App = () => {
   const navigate = useNavigate();
@@ -52,9 +54,15 @@ const App = () => {
           <Route path="/salary" element={<Salary />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/buyAdmin" element={<BuyAdmin />} />
-          <Route path="/videos" element={<Videos />} />
-          <Route path="/post" element={<Post />} />
+          <Route path="/videos" >
+            <Route index element={<Videos />} />
+            <Route path="/videos/" element={<Videos />} />
+          </Route>
           <Route path="/comment" element={<Comment />} />
+          <Route path="/upload" element={<UploadPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profiler" element={<ProfileWorker />} />
+          <Route path="/search" element={<SearchingSystem />} />
         </Routes>
       </currentUser.Provider>
     </div>

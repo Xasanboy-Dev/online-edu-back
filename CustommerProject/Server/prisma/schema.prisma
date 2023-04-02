@@ -21,6 +21,9 @@ model user {
   createdDate      DateTime @default(now())
   imageURL         String   @default("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmADCanENXbPEIU8BSSP8tofT9ydhrTCBaw&usqp=CAU")
   posts            Int[]
+  likes            Int[]
+  dislikes         Int[]
+  savedPosts       Int[]
 }
 
 model message {

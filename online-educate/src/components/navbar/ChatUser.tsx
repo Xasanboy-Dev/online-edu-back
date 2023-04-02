@@ -1,4 +1,3 @@
-import { copyFileSync } from "fs";
 import React, { useContext } from "react";
 import userInfo from "../../mock/UserData";
 import { currentUser } from "../../useContext/default";

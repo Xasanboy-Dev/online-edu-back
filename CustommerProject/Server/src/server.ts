@@ -9,6 +9,7 @@ import cors from 'cors'
 import Comment from './../router/Comments/comment'
 import Posts from './../router/Posts/router'
 import path from 'path'
+import search from './../router/Search/search'
 
 const server = express()
 const PORT = process.env.PORT
@@ -27,6 +28,7 @@ server.use('/message', message)
 server.use('/chat', chat)
 server.use('/comment', Comment)
 server.use('/posts', Posts)
+server.use('/search', search)
 
 server.listen(PORT, () => {
     console.log(`SERVER: http://localhost:${PORT}/`)

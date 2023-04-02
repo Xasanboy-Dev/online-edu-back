@@ -21,6 +21,12 @@ export default function Comment() {
             ownerID: 1
         },
         {
+            text: "hello World",
+            createdDate: '2022-01-15T11:02:17Z',
+            ownerName: "John",
+            ownerID: 1
+        },
+        {
             text: "hello World,hello World,hello World,hello World",
             createdDate: '2022-01-15T11:02:17Z',
             ownerName: "John",
