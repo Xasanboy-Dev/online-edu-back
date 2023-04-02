@@ -24,22 +24,22 @@ const App = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("allowed?");
   const [user, setUser] = useState<any>();
-  useEffect(() => {
-    if (token) {
-      const result = getUserByToken(token);
-      result
-        .then((res) => {
-          if (res) {
-            setUser(res);
-          } else {
-            navigate("/login");
-          }
-        })
-        .catch((err) => {
-          navigate("/login");
-        });
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (token) {
+  //     const result = getUserByToken(token);
+  //     result
+  //       .then((res) => {
+  //         if (res) {
+  //           setUser(res);
+  //         } else {
+  //           navigate("/login");
+  //         }
+  //       })
+  //       .catch((err) => {
+  //         navigate("/login");
+  //       });
+  //   }
+  // }, [token]);
   return (
     <div className="">
       <currentUser.Provider value={user}>
