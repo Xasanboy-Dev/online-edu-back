@@ -21,6 +21,7 @@ import Post from "./Post/Post";
 import Comment from "./Post/Comment";
 import UploadPage from "./Post/UploadPage"
 import SearchingSystem from "./components/navbar/Search";
+import SettingsPage from "./components/settings";
 
 const App = () => {
   const navigate = useNavigate();
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/profiler" element={<ProfileWorker />} />
           <Route path="/search" element={<SearchingSystem />} />
+          <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </currentUser.Provider>
     </div>

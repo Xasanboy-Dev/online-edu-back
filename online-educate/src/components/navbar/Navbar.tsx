@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
-import { NavLink, useLocation } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navItems = [
     {
-      name: "House",
+      name: "Home",
       icon: "bi bi-house-door-fill",
       path: "/"
 
     },
     {
-      name: "Videos",
+      name: "Video",
       icon: "bi bi-camera-video",
       path: "/videos"
 
@@ -27,7 +26,7 @@ const Navbar = () => {
       path: "/chat"
     },
     {
-      name: "profile",
+      name: "Profile",
       icon: "bi bi-person-circle",
       path: "/profile"
     },
@@ -42,17 +41,15 @@ const Navbar = () => {
       path: "/settings"
     }
   ];
-  const [arr, setArr] = useState([]);
-  const [show, setShow] = useState(false)
   return (
     <nav className="fixed w-full bottom-0 h-16 max-sm:text-sm border-t-2 border-black/30 bg-black/40 rounded-t-2xl flex justify-center items-center text-white/80">
       <ul className="flex justify-between items-center  gap-3">
         {navItems.map((a: { name: string, path: string, icon: string }) => {
           return (
             <li>
-              <NavLink to={a.path}>
-                <i className={`mx-15 ${a.icon}`}></i>
-                {a.name}
+              <NavLink  to={a.path}>
+                <i title={`${a.name}`}
+                 className={`mr-[25px] text-3xl ${a.icon}`}></i>
               </NavLink>
             </li>
           );

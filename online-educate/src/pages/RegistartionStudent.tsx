@@ -33,7 +33,7 @@ const RegistartionStudent = () => {
   return (
     <div className="flex flex-col justify-start max-sm:pt-10 items-center h-screen w-full bg-cover bg-center bg-[url(/public\bg1.png)] text-white/80 font-semibold">
       <div className="flex flex-col justify-center items-center mb-6">
-        <img src="public/pngwing.com (2).png" alt="" className="w-[250px] " />
+        <img src="public/pngwing.com(2).png" alt="" className="w-[250px] " />
         <h1 className="text-white/80 text-xl font-semibold">
           Financi Education
         </h1>
