@@ -5,15 +5,26 @@ import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Input from "../Chat/Input";
 import Chatting from "../Chat/Chatting";
-
 const Chat = () => {
+
+  let user: {
+    name: string,
+    lastname: string,
+    phoneNumber: string
+  } = {
+    name: "Xasanboy",
+    lastname: "Abdurasulov",
+    phoneNumber: "+998991788473"
+  }
+
+  let users: { name: string, lastname: string, phoneNumber: string }
   const token = localStorage.getItem("allowed?");
   const navigate = useNavigate();
   if (!token) {
     navigate("/login");
   }
   const [openModal, setOpenModal] = useState(false);
-  const handlerChange = (e) => {
+  const handlerChange = (e: any) => {
     e.preventDefault();
     setOpenModal(!openModal);
   };
@@ -22,6 +33,7 @@ const Chat = () => {
       <div className="h-full overflow-none w-full bg-black/20 scrollbar-hide ">
         {openModal ? (
           <div className="w-[70%] bg-black/80 h-screen fixed text-white z-50">
+            <i onClick={() => setOpenModal(false)} className="text-2xl bi bi-x-circle"></i>
             <div className="flex w-full justify-between">
               <img
                 src="public\pngwing.com.png"
@@ -31,15 +43,16 @@ const Chat = () => {
             </div>
             <div className="w-full p-4 border-b-2 border-white/50">
               <h1 className="text-xl font-semibold flex items-center gap-4">
-                Anvar
+                {user.name}
               </h1>
-              <p className="text-sm">+998991234567</p>
+              <p className="text-sm">{user.phoneNumber}</p>
             </div>
-            <div className="w-full p-2 h-full flex flex-wrap">Saved</div>
+            <div className="w-full p-2 h-full flex flex-wrap">
+
+            </div>
           </div>
         ) : (
           <>
-            Hello World
           </>
         )}
         <form className="flex  p-5 justify-between font-semibold items-center pl-2 px-2 py-4 border-b-2 border-white/60">

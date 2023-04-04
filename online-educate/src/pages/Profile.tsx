@@ -1,14 +1,10 @@
 import { Button, Textarea } from '@material-tailwind/react'
 import React, { useState } from 'react'
-import CopyToClipboard from 'react-copy-to-clipboard'
 import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom'
-import Post from '../Post/Post'
 import Navbar from '../components/navbar/Navbar'
 import { sendComment } from '../TypeScript/posts'
 
 const Profile = () => {
-    const navigate = useNavigate()
     const thisPosts = [
         {
             id: 2,
@@ -256,10 +252,10 @@ const Profile = () => {
                             )
                         } else if (video && post.type == "video") {
                             return (
-                                <div className="my-5" style={{ height: innerHeight }}>
-                                    <div className="mt-[15px] pb-[25px]  rounded w-[100%] mx-auto">
+                                <div className='my-[-25px]' style={{ height: innerHeight }}>
+                                    <div className="mt-[15px] rounded py-[100px] mx-auto">
                                         <div className="border mx-5 px-5 my-2 rounded  justify-between flex items-center  border-black">
-                                            <video src={`${post.url}`} style={{ height: innerHeight }} autoPlay controls />
+                                            <video src={`${post.url}`} autoPlay controls />
                                         </div>
                                     </div>
                                 </div>
@@ -285,10 +281,10 @@ const Profile = () => {
                             )
                         } else if (video && post.type == "video") {
                             return (
-                                <div className="my-5" style={{ height: innerHeight }}>
-                                    <div className="mt-[15px] pb-[25px]  rounded w-[100%] mx-auto">
+                                <div className='my-[-25px]' style={{ height: innerHeight }}>
+                                    <div className="mt-[15px] rounded py-[100px] mx-auto">
                                         <div className="border mx-5 px-5 my-2 rounded  justify-between flex items-center  border-black">
-                                            <video src={`${post.url}`} style={{ height: innerHeight }} autoPlay controls />
+                                            <video src={`${post.url}`} autoPlay controls />
                                         </div>
                                     </div>
                                 </div>
@@ -314,10 +310,10 @@ const Profile = () => {
                             )
                         } else if (video && post.type == "video") {
                             return (
-                                <div className="my-5" style={{ height: innerHeight }}>
-                                    <div className="mt-[15px] pb-[25px]  rounded w-[100%] mx-auto">
+                                <div className='my-[-25px]' style={{ height: innerHeight }}>
+                                    <div className="mt-[15px] rounded py-[100px] mx-auto">
                                         <div className="border mx-5 px-5 my-2 rounded  justify-between flex items-center  border-black">
-                                            <video src={`${post.url}`} style={{ height: innerHeight }} autoPlay controls />
+                                            <video src={`${post.url}`} autoPlay controls />
                                         </div>
                                     </div>
                                 </div>

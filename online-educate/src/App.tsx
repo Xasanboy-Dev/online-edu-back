@@ -22,6 +22,7 @@ import Comment from "./Post/Comment";
 import UploadPage from "./Post/UploadPage"
 import SearchingSystem from "./components/navbar/Search";
 import SettingsPage from "./components/settings";
+import ClickedPage from "./Post/ClickedPost";
 
 const App = () => {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ const App = () => {
           <Route path="/videos" >
             <Route index element={<Videos />} />
             <Route path="/videos/" element={<Videos />} />
+            <Route path="/videos/video" element={<ClickedPage />} />
           </Route>
           <Route path="/comment" element={<Comment />} />
           <Route path="/upload" element={<UploadPage />} />

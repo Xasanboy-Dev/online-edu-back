@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { RegisterAuth } from "../TypeScript/Auth";
+import { Toaster, toast } from "react-hot-toast";
 const RegistartionStudent = () => {
   let [name, setName] = useState("");
   let [lastname, setLastname] = useState("");
@@ -25,6 +26,7 @@ const RegistartionStudent = () => {
       setError(false);
       const text = await RegisterAuth(name, lastname, password, phoneNumber);
       setMessage(text);
+      toast.success("Registered succesfully!")
     } else {
       setError(true);
     }
@@ -38,7 +40,7 @@ const RegistartionStudent = () => {
           Financi Education
         </h1>
       </div>
-
+      <div><Toaster /></div>
       <div className="sm:w-[400px] h-[500px] bg-transparet border-4  border-blue-600 max-sm:w-[280px] h-min rounded-xl text-md px-2">
         <h1 className="flex justify-center pb-1 mx-3 mt-3.5 border-b border-white-1">
           Registratsyadan o'tish
