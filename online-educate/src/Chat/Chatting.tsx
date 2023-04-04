@@ -1,15 +1,19 @@
 import React from "react";
-import Input from "./Input";
-export default function Chat() {
+export default function Chat({ owner, createdDte, text, id, currentUser }:
+  {
+    owner: string, createdDte: string, text: string, id: number, currentUser:
+    { name: string, lastname: string, id: number }
+  }) {
+  function convert(date: string) {
+    const newDate = new Date(date);
+    return newDate.toLocaleDateString()
+  }
   return (
-    <div className="chat">
-      <div className="chatInfo">
-        <span>Xasanboy</span>
-        <div className="chatIcons">
-          <i className="bi bi-person-fill-add"></i>
-          <i className="bi bi-camera-video-fill"></i>
-          <i className="bi bi-three-dots"></i>
-        </div>
+    <div className="flex  justify-end mx-5 my-5 text-white">
+      <div className="border rounded-t-lg">
+        <span className="w-full flex justify-end text-[15px]">{id == currentUser.id ? "You" : owner}</span>
+        <p className="text-purple-500">{text}</p>
+        <p className="">{convert(createdDte)}</p>
       </div>
     </div>
   );

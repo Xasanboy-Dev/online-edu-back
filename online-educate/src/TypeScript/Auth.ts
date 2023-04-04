@@ -27,7 +27,8 @@ export async function RegisterAuth(
         phoneNumber,
         password,
       });
-      console.log(result.data);
+      result.data;
+      return result.data.message;
     } else {
       return "Foydalanuvchi yaroqsiz yoki allaqachon olingan";
     }

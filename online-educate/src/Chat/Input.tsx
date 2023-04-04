@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import EmojiPicker from "emoji-picker-react";
+import Emoji from "./Emojji";
 export default function Input() {
   const [select, setSelect] = useState<Boolean>(false);
   const [letter, setLetter] = useState("");
@@ -27,10 +27,7 @@ export default function Input() {
             onClick={() => setSelect(false)}
             className="bi bi-x flex justify-content-end text-3xl "
           />
-
-          Emmoji
-
-
+          <Emoji />
         </span>
       </div>
       <textarea

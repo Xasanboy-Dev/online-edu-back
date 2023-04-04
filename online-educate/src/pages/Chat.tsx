@@ -6,7 +6,26 @@ import { useNavigate } from "react-router-dom";
 import Input from "../Chat/Input";
 import Chatting from "../Chat/Chatting";
 const Chat = () => {
-
+  let messages = [
+    {
+      name: "Xasanboy",
+      id: 1,
+      text: "WoW, very sample!",
+      createdDate: "2022-01-15T11:02:17Z"
+    },
+    {
+      name: "Xasanboy",
+      id: 1,
+      text: "WoW, very sample!",
+      createdDate: "2022-01-15T11:02:17Z"
+    },
+    {
+      name: "Xusinboy",
+      id: 2,
+      text: "Next",
+      createdDate: "2022-01-15T13:02:17Z"
+    },
+  ]
   let user: {
     name: string,
     lastname: string,
@@ -79,9 +98,12 @@ const Chat = () => {
           </div>
           <div className="max-sm:hidden w-3/5 h-full fixed bg-gradient right-0">
             <div className=" ">
-              <div>
-                <Chatting />
-              </div>
+              {messages.map(message => {
+                return (
+                  <Chatting currentUser={{ id: 1, lastname: "Abdurasulov", name: "Xaanboy" }} createdDte={message.createdDate} owner={message.name} text={message.text}
+                    id={1} />
+                )
+              })}
               <div
                 className="flex bg-white  w-full ml-[10px]   mr-[100%]"
                 style={{ marginTop: innerHeight - 220 + "px" }}

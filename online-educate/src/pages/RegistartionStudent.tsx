@@ -24,9 +24,13 @@ const RegistartionStudent = () => {
       phoneNumber.length == 12
     ) {
       setError(false);
-      const text = await RegisterAuth(name, lastname, password, phoneNumber);
+      const text: "Foydalanuvchi yaroqsiz yoki allaqachon olingan" | any = await RegisterAuth(name, lastname, password, phoneNumber);
       setMessage(text);
-      toast.success("Registered succesfully!")
+      if (text == "Foydalanuvchi yaroqsiz yoki allaqachon olingan") {
+        toast.error(text)
+      } else {
+        toast.success(text)
+      }
     } else {
       setError(true);
     }

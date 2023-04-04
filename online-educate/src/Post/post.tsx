@@ -85,17 +85,21 @@ export default function Post({ photo, video, USER, type }: {
                             <Comment />
                         </div>
                     </div>
-                    <div className={`${click ? "" : "hidden"} items-center`}>
+                    <div className={`${click ? "hidden" : "flex"} items-center`}>
                         <div className="flex border mt-2  border-t-white border-b-[0px] rounded items-center justify-between w-full">
                             <div className="mx-5 w-full my-5 flex ">
                                 <button>
-                                    <i className="mx-5 bi bi-hand-thumbs-up border border-white text-white  p-2 rounded"> {video.likes}</i>
+                                    <i
+                                        className="mx-5 bi bi-hand-thumbs-up border
+                                     border-white text-white  p-2 rounded"> {video.likes.length}</i>
                                 </button>
                                 <button>
-                                    <i className="bi bi-hand-thumbs-down border border-white  text-white p-2 rounded"> {video.dislikes}</i>
+                                    <i className="bi bi-hand-thumbs-down border border-white
+                                     text-white p-2 rounded"> {video.dislikes.length}</i>
                                 </button>
                                 <button>
-                                    <i className="mx-5 bi bi-chat-dots border border-white  text-white p-2 rounded "> {video.comments.length} </i>
+                                    <i className="mx-5 bi bi-chat-dots border border-white
+                                      text-white p-2 rounded "> {video.comments.length} </i>
                                 </button>
                             </div>
                             <div className=" w-full mx-auto">
@@ -172,10 +176,12 @@ export default function Post({ photo, video, USER, type }: {
                         <div className="flex border mt-2  border-t-white border-b-[0px] rounded items-center justify-between w-full">
                             <div className="mx-5 w-full my-5 flex ">
                                 <button>
-                                    <i className="mx-5 bi bi-hand-thumbs-up border border-white  p-2 rounded"> {video.likes}</i>
+                                    <i className="mx-5 bi bi-hand-thumbs-up border border-white 
+                                     p-2 rounded"> {video.likes?.length}</i>
                                 </button>
                                 <button>
-                                    <i className="bi bi-hand-thumbs-down border border-white  p-2 rounded"> {video.dislikes}</i>
+                                    <i className="bi bi-hand-thumbs-down border border-white 
+                                     p-2 rounded"> {video.dislikes?.length}</i>
                                 </button>
                                 <button>
                                     <i className="mx-5 bi bi-chat-dots border border-white  p-2 rounded "> {video.comments.length} </i>
