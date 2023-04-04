@@ -23,6 +23,7 @@ import UploadPage from "./Post/UploadPage"
 import SearchingSystem from "./components/navbar/Search";
 import SettingsPage from "./components/settings";
 import ClickedPage from "./Post/ClickedPost";
+import Qarz from "./pages/Qarzdorlar"
 
 const App = () => {
   const navigate = useNavigate();
@@ -55,7 +56,6 @@ const App = () => {
           <Route path="/buyAdmin" element={<BuyAdmin />} />
           <Route path="/salary" element={<Salary />} />
           <Route path="/chat" element={<Chat />} />
-          <Route path="/buyAdmin" element={<BuyAdmin />} />
           <Route path="/videos" >
             <Route index element={<Videos />} />
             <Route path="/videos/" element={<Videos />} />
@@ -67,6 +67,8 @@ const App = () => {
           <Route path="/profiler" element={<ProfileWorker />} />
           <Route path="/search" element={<SearchingSystem />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/admin" element={<MainPage />} />
+          <Route path="/qarz" element={<Qarz />} />
         </Routes>
       </currentUser.Provider>
     </div>

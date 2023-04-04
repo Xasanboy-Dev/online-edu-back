@@ -1,6 +1,7 @@
 import "../styles/main.css"
 import { useEffect, useRef, useState } from "react"
 import { Input } from "postcss"
+import { NavLink, useNavigate } from "react-router-dom"
 
 export default function MainPage() {
 
@@ -14,7 +15,7 @@ export default function MainPage() {
     }
     const checkValue = () => {
         setShowInput(false)
-        if(typeof valueInput !== NaN){
+        if (typeof valueInput !== NaN) {
             setValueInput(summaRef.current.value)
         }
     }
@@ -53,7 +54,7 @@ export default function MainPage() {
 
     useEffect(() => {
         nameRef.current.value = ''
-    },[click])
+    }, [click])
 
     function close() {
         const inpust = document.querySelector('.addInputRight')
@@ -63,8 +64,7 @@ export default function MainPage() {
         }, 500)
         setLet('a')
     }
-
-
+    const navigate = useNavigate()
     return (
         <div className="MainPage">
             <div className="mainHeader">
@@ -72,11 +72,14 @@ export default function MainPage() {
                     <img src='../public/pngwing.com (2).png' alt="" />
                     <li className="p" >Finace site</li>
                     <li className="listsItems">Guruh</li>
-                    <li className="listsItems">qarzdorlar</li>
-                    <li className="listsItems">oylik</li>
-                    <li className="listsItems">kritsh</li>
-                    <li className="listsItems">oylik</li>
-                    <li className="listsItems">chat</li>
+                    <li className="listsItems">
+                        <NavLink to={'/qarz'}> Qarzdorlar</NavLink>
+                    </li>
+                    <li className="listsItems">
+                        <NavLink to={"/salary"}>Oylik</NavLink></li>
+                    <li className="listsItems">Oylik kritsh</li>
+                    <li className="listsItems">
+                        <NavLink to={"/chat"}>Chat</NavLink></li>
                 </ul>
                 <div className="searchBar">
                     O
@@ -132,67 +135,67 @@ export default function MainPage() {
                     </div>
                     <div className="dd">
                         <div className="addInputRight close">
-                            <input ref={nameRef} type="text" className="addInfoInput" placeholder="add"  />  <p onClick={() => close()} className="right">{right}</p>
+                            <input ref={nameRef} type="text" className="addInfoInput" placeholder="add" />  <p onClick={() => close()} className="right">{right}</p>
                         </div>
                         <p className="aa" onClick={() => click()}>+</p>
                     </div>
                 </div>
 
-                 <div className="flex w-full mb-40">
+                <div className="flex w-full mb-40">
 
-                <form className="UsersInfo">
+                    <form className="UsersInfo">
 
-                    <p>Kursi <select className="">
-                        <option value="Frontend">Frontend</option>
-                        <option value="Backend">Backend</option>
-                        <option value="SMM">SMM</option>
+                        <p>Kursi <select className="">
+                            <option value="Frontend">Frontend</option>
+                            <option value="Backend">Backend</option>
+                            <option value="SMM">SMM</option>
                         </select></p>
-                    <p>Gruh nomi <select className="">
-                        <option value="Frontend">Frontend F68</option>
-                        <option value="Backend">Frontend F69</option>
-                        <option value="SMM">Frontend F70</option>
+                        <p>Gruh nomi <select className="">
+                            <option value="Frontend">Frontend F68</option>
+                            <option value="Backend">Frontend F69</option>
+                            <option value="SMM">Frontend F70</option>
                         </select></p>
-                    <p>ismi/familya <input className="span" type="text" placeholder="Jumaniyozov Alibek" /></p>
-                    <p>tel <input className="span" type="text" value={+998914373790} /></p>
-                        
+                        <p>ismi/familya <input className="span" type="text" placeholder="Jumaniyozov Alibek" /></p>
+                        <p>tel <input className="span" type="text" value={+998914373790} /></p>
+
                         {
                             showInput ? <div className="flex">
-                                 <input ref={summaRef} className='a bg-transparent' placeholder='summa ni kiriting' onChange={e => handlerInput(e)} type="text" />
-                                 <button className={`a ${showInput ? 'block' : 'hidden'}`} onClick={() => checkValue()}>Complete</button>
+                                <input ref={summaRef} className='a bg-transparent' placeholder='summa ni kiriting' onChange={e => handlerInput(e)} type="text" />
+                                <button className={`a ${showInput ? 'block' : 'hidden'}`} onClick={() => checkValue()}>Complete</button>
                             </div>
-                            : <button onClick={() => setShowInput(true)} className="a" >{valueInput} som</button>
+                                : <button onClick={() => setShowInput(true)} className="a" >{valueInput} som</button>
                         }
 
-                    <div className="flex justify-between w-full text-white font-semibold">
+                        <div className="flex justify-between w-full text-white font-semibold">
 
-                    <button className="bg-red-400 p-2 px-4 rounded-xl active:scale-90" >Delete</button>
-                    <button className="bg-blue-400 p-2 px-4 rounded-xl active:scale-90 transiton-all" >Tasdiklash {right}</button>
-                    </div>
-
-                    
-                    
-                </form>
-                <div className='w-full flex justify-around items-center pb-7 '>
-                            
-                            <div className='w-32  rounded-full bg-white justify-center flex items-center'>
-                                <img src="public/payme-01.png" className='scale-110 bg-center bg-contain' alt="" />
-                            </div>
-                            
-                             <div className='w-32  rounded-full bg-white justify-center flex items-center'>
-                                <img src="public/Click-01.png" className='scale-110 bg-center bg-contain' alt="" />
-                            </div>
-                       
-                            
-                            <div className='w-32 h-32 rounded-full bg-white justify-center flex items-center'>
-                                <img src="public/logo-horizontal-black-colored.png" className='scale-110 bg-center bg-contain' alt="" />
-                            </div>
-                            
-                             <div className='w-32 h-32 rounded-full  bg-white justify-center flex items-center'>
-                               <h1 className='w-32 text-xl flex flex-col items-center justify-center font-bold text-black/70'>Humo/<span>UzCard </span></h1>
-                            </div>
-                       
-                            </div>       
+                            <button className="bg-red-400 p-2 px-4 rounded-xl active:scale-90" >Delete</button>
+                            <button className="bg-blue-400 p-2 px-4 rounded-xl active:scale-90 transiton-all" >Tasdiklash {right}</button>
                         </div>
+
+
+
+                    </form>
+                    <div className='w-full flex justify-around items-center pb-7 '>
+
+                        <div className='w-32  rounded-full bg-white justify-center flex items-center'>
+                            <img src="public/payme-01.png" className='scale-110 bg-center bg-contain' alt="" />
+                        </div>
+
+                        <div className='w-32  rounded-full bg-white justify-center flex items-center'>
+                            <img src="public/Click-01.png" className='scale-110 bg-center bg-contain' alt="" />
+                        </div>
+
+
+                        <div className='w-32 h-32 rounded-full bg-white justify-center flex items-center'>
+                            <img src="public/logo-horizontal-black-colored.png" className='scale-110 bg-center bg-contain' alt="" />
+                        </div>
+
+                        <div className='w-32 h-32 rounded-full  bg-white justify-center flex items-center'>
+                            <h1 className='w-32 text-xl flex flex-col items-center justify-center font-bold text-black/70'>Humo/<span>UzCard </span></h1>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     )
