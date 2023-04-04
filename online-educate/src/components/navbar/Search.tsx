@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Textarea } from "@material-tailwind/react";
+import Navbar from "./Navbar"
 export default function SearchingSystem() {
     const [text, setText] = useState("")
     return (
@@ -14,6 +14,7 @@ export default function SearchingSystem() {
                     onChange={(e) => setText(e.target.value)}
                 />
             </div>
+            <Navbar />
         </div>
     )
 }

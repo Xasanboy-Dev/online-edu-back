@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from '../components/navbar/Navbar'
 import Post from "../Post/Post";
+import { NavLink, useNavigate } from "react-router-dom";
 export default function HomePage() {
   let posts = [
     {
@@ -24,6 +25,7 @@ export default function HomePage() {
       type: "photo"
     },
   ]
+  const navigate = useNavigate()
   let USER: {
     id: number;
     name: string;

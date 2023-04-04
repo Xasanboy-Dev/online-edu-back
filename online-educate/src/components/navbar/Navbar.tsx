@@ -42,8 +42,8 @@ const Navbar = () => {
     }
   ];
   return (
-    <nav className="fixed w-full bottom-0 h-16 max-sm:text-sm border-t-2 border-black/30 bg-black/40 rounded-t-2xl flex justify-center items-center text-white/80">
-      <ul className="flex justify-between items-center  gap-3">
+    <nav className=" fixed w-full bottom-0 h-16 max-sm:text-sm border-t-2 border-white bg-black/40 rounded-t-2xl flex justify-center items-center text-white/80">
+      <ul className=" flex justify-between items-center  gap-3">
         {navItems.map((a: { name: string, path: string, icon: string }) => {
           return (
             <li>

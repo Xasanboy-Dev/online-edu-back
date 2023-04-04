@@ -4,7 +4,7 @@ import { BiMenu, BiArrowBack } from "react-icons/bi";
 import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Input from "../Chat/Input";
-import Chatting from "./../Chat/Chatting";
+import Chatting from "../Chat/Chatting";
 
 const Chat = () => {
   const token = localStorage.getItem("allowed?");
@@ -38,13 +38,15 @@ const Chat = () => {
             <div className="w-full p-2 h-full flex flex-wrap">Saved</div>
           </div>
         ) : (
-          <></>
+          <>
+            Hello World
+          </>
         )}
         <form className="flex  p-5 justify-between font-semibold items-center pl-2 px-2 py-4 border-b-2 border-white/60">
           <div className="flex text-white text-xl">
-            <button onClick={() => navigate(-1)} className="pr-4 text-md">
-              <BiArrowBack />
-            </button>
+            <h1 className="pr-4 text-md">
+              <BiArrowBack onClick={() => navigate(-1)} />
+            </h1>
             <button
               onClick={(e) => handlerChange(e)}
               className={`flex text-white text-2xl`}
@@ -57,10 +59,10 @@ const Chat = () => {
             <IoIosSearch />
           </button>
         </form>
-        <ChatUser />
+        <ChatUser chattingUserId={1} />
         <div className="w-full relative flex">
           <div className="overflow-auto max-h-[1000px] sm:w-2/5 max-sm:w-full py-2 px-2 sm:border-r-2 sm:border-white/60">
-            <ChatUser />
+            <ChatUser chattingUserId={1} />
           </div>
           <div className="max-sm:hidden w-3/5 h-full fixed bg-gradient right-0">
             <div className=" ">

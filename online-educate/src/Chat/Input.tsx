@@ -27,7 +27,10 @@ export default function Input() {
             onClick={() => setSelect(false)}
             className="bi bi-x flex justify-content-end text-3xl "
           />
-          <EmojiPicker onEmojiClick={(e) => setLetter(letter + e.emoji)} />
+
+          Emmoji
+
+
         </span>
       </div>
       <textarea

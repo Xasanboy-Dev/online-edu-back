@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import Navbar from "./../components/navbar/Navbar"
 export default function UploadPage() {
     let [file, setFile] = useState<any>()
     let [url, setUrl] = useState("")
@@ -10,7 +11,7 @@ export default function UploadPage() {
         }
     }, [file])
     return (
-        <div className="h-screen font-sans text-gray-900 bg-gray-300 border-box">
+        <div className="h-screen font-sans  bg-[#191919] border-box">
             <div className="flex justify-center w-full mx-auto sm:max-w-lg">
                 <div className="flex flex-col items-center justify-center h-auto my-20 bg-white sm:w-[180%] sm:rounded-lg sm:shadow-xl">
                     <div style={{ display: file ? "flex" : "none" }}>
@@ -33,6 +34,7 @@ export default function UploadPage() {
                     </div>
                 </div>
             </div>
+            <Navbar />
         </div>
     )
 }
