@@ -1,0 +1,43 @@
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(329deg, rgba(0, 0, 0, 1) 16%, rgba(15, 34, 61, 1) 42%, rgba(17, 17, 54, 1) 90%);
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr button {
+    width: 80px;
+    height: 34.88px;
+    font-weight: 700;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    color: #1164e0;
+  }
+
+  .plusTr {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 32px;
+    border: 2px solid #1164e0;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    cursor: pointer;
+    color: #1164e0;
+    background: transparent;
+    z-index: 1;
+  }

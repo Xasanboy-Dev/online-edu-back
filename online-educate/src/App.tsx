@@ -4,6 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import ChatUser from "./components/navbar/ChatUser";
 import TeachersCard from "./components/TeachersCard";
 import BuyAdmin from "./pages/BuyAdmin";
+import WorkInfo from "./pages/WorkerInfo"
 import Chat from "./pages/Chat";
 import RegistartionStudent from "./pages/RegistartionStudent";
 import RegistartionWorker from "./pages/RegisterPupil";
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/admin" element={<MainPage />} />
           <Route path="/qarz" element={<Qarz />} />
+          <Route path="/work" element={<WorkInfo />} />
         </Routes>
       </currentUser.Provider>
     </div>
